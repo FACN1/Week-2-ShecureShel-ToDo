@@ -104,16 +104,13 @@ var todo = (function() {
   // bind create todo form
   var addTodoForm = document.getElementById('add-todo');
   addTodoForm.addEventListener('submit', function(event) {
-    // https://developer.mozilla.org/en-US/docs/Web/Events/submit
-    // what does event.preventDefault do?
-    // what is inside event.target?
-    console.log('click');
+    event.preventDefault();
 
-    var description = "?" // event.target ....
+    var typedTodo = {description: event.target.description.value};
 
-    state = todoFunctions.addTodo() // change this!! you should use todoFunctions.addTodo
+    state = todoFunctions.addTodo(state, typedTodo); // change this!! you should use todoFunctions.addTodo
     controller.render(state);
-  })
+  });
 
 
   controller.render(state);
