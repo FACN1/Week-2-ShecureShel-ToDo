@@ -69,6 +69,9 @@ var todo = (function() {
       // you will need to use addEventListener
 
       // add span holding description
+      var addSpan = document.createElement('span');
+      addSpan.innerHTML = todoData.description;
+      todoNode.appendChild(addSpan);
 
       // this adds the delete button
       var deleteButtonNode = document.createElement('button');
@@ -79,7 +82,12 @@ var todo = (function() {
       todoNode.appendChild(deleteButtonNode);
 
       // add markTodo button
-
+      // var markTodoButtonNode = document.createElement('button');
+      // markTodoButtonNode.addEventListener('click', function(event) {
+      //   state = todoFunctions.markTodo(state, todoData.done);
+      //   controller.render(state);
+      // })
+      // todoNode.appendChild(markTodoButtonNode);
       // add classes for css
 
       return todoNode;
@@ -107,7 +115,7 @@ var todo = (function() {
 
     var description = "?" // event.target ....
 
-    state = state // change this!! you should use todoFunctions.addTodo
+    state = todoFunctions.addTodo() // change this!! you should use todoFunctions.addTodo
     controller.render(state);
   })
 
