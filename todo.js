@@ -27,6 +27,7 @@ var todo = (function() {
       // hint: array.concat
       newTodo.id = todoFunctions.generateId();
       var newTodos = todos.concat(newTodo);
+      // todos[0] = "mutaded!";
       return newTodos;
     },
     deleteTodo: function (todos, idToDelete) {
@@ -37,9 +38,23 @@ var todo = (function() {
     },
     markTodo: function(todos, idToMark) {
       // should leave the input argument todos unchanged
-      // in the new todo list, all elements will remain unchanged except the on with id: idToMark
-      // this element will have its id toggled
+
+      // in the new todo list, all elements will remain unchanged except the one with id: idToMark
+
+      // this element will have its done toggled
       // hint: array.map
+
+      return todos.map(function(element){
+      var newObj = {};
+      newObj.id = element.id;
+      newObj.description = element.description;
+      newObj.done = element.done;
+
+      if (element.id == idToMark) {newObj.done = !element.done;}
+      return newObj;
+
+      });
+
     },
     sortTodos: function(todos, sortFunction) {
       // stretch goal! Do this last
