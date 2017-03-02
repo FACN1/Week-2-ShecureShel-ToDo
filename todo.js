@@ -29,10 +29,11 @@ var todo = (function() {
     markTodo: function(todos, idToMark) {
 
       return todos.map(function(element){
-      var newObj = {};
-      newObj.id = element.id;
-      newObj.description = element.description;
-      newObj.done = element.done;
+        var newObj = {};
+
+      Object.keys(element).forEach(function(key){
+      newObj[key] =element[key];
+      })
 
       if (element.id == idToMark) {newObj.done = !element.done;}
       return newObj;
