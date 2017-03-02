@@ -10,9 +10,12 @@ var todo = (function() {
 
     addTodo: function (todos, newTodo) {
 
-      newTodo.id = todoFunctions.generateId();
-      newTodo.done = false;
-      var newTodos = todos.concat(newTodo);
+      var myNewTodo = {};
+
+      myNewTodo.id = todoFunctions.generateId();
+      myNewTodo.done = false;
+      myNewTodo.description = newTodo.description;
+      var newTodos = todos.concat(myNewTodo);
       return newTodos;
     },
 
@@ -28,9 +31,10 @@ var todo = (function() {
 
       return todos.map(function(element){
         var newObj = {};
-        newObj.id = element.id;
-        newObj.description = element.description;
-        newObj.done = element.done;
+
+        Object.keys(element).forEach(function(key){
+        newObj[key] =element[key];
+        })
 
         if (element.id == idToMark) {newObj.done = !element.done;}
         return newObj;
