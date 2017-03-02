@@ -1,6 +1,4 @@
-QUnit.test( "hello test", function( assert ) {
-  assert.equal( 1, 1, "Passed!" );
-});
+
 
 // {
 //   id: /*the id of the todo*/
@@ -52,10 +50,6 @@ QUnit.test( "addToDo test", function( assert ) {
   assert.deepEqual( todo.todoFunctions.addTodo(toDoArray, myNewToDo), expected, "Newtodo added to todos" );
 });
 
-// QUnit.test( "markTodo test", function( assert ) {
-//
-//   assert.deepEqual( todo.todoFunctions.markTodo(toDoArray, myNewToDo), expected, "Newtodo  mark todo to todos" );
-// });
 
 QUnit.test( "test for mutatetion input array", function( assert ) {
 
@@ -96,9 +90,6 @@ QUnit.test( "another addToDo test", function( assert ) {
   assert.notEqual(todos[0].id, todos[1].id, "id's should be different");
 });
 
-// QUnit.test( "test addToDo doesn't mutate todo array", function( assert ) {
-//   assert.deepEqual( todo.todoFunctions.addTodo(toDoArray, myNewToDo), toDoArray, "todo is unmutated" );
-// });
 
 var testArray = [
 {
