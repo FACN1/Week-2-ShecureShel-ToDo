@@ -9,9 +9,12 @@ var todo = (function() {
     })(),
     addTodo: function (todos, newTodo) {
 
-      newTodo.id = todoFunctions.generateId();
-      newTodo.done = false;
-      var newTodos = todos.concat(newTodo);
+      var myNewTodo = {};
+
+      myNewTodo.id = todoFunctions.generateId();
+      myNewTodo.done = false;
+      myNewTodo.description = newTodo.description;
+      var newTodos = todos.concat(myNewTodo);
       return newTodos;
     },
     deleteTodo: function (todos, idToDelete) {
