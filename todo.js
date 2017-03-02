@@ -7,6 +7,7 @@ var todo = (function() {
         return idCounter++;
       }
     })(),
+
     addTodo: function (todos, newTodo) {
 
       newTodo.id = todoFunctions.generateId();
@@ -14,29 +15,29 @@ var todo = (function() {
       var newTodos = todos.concat(newTodo);
       return newTodos;
     },
+
     deleteTodo: function (todos, idToDelete) {
 
-      function shouldBeDeleted(todo)
-      {
-        return  todo.id!==idToDelete;
-      }
+      function shouldBeDeleted(todo){
+        return  todo.id!==idToDelete
+      };
     return todos.filter(shouldBeDeleted);
     },
 
     markTodo: function(todos, idToMark) {
 
       return todos.map(function(element){
-      var newObj = {};
-      newObj.id = element.id;
-      newObj.description = element.description;
-      newObj.done = element.done;
+        var newObj = {};
+        newObj.id = element.id;
+        newObj.description = element.description;
+        newObj.done = element.done;
 
-      if (element.id == idToMark) {newObj.done = !element.done;}
-      return newObj;
+        if (element.id == idToMark) {newObj.done = !element.done;}
+        return newObj;
 
       });
-
     },
+
     sortTodos: function(todos, sortFunction) {
       // stretch goal! Do this last
       // should leave the input arguement todos unchanged
@@ -88,6 +89,7 @@ var todo = (function() {
 
       return todoNode;
     },
+
     render: function(state) {
       var todoListWrapper = document.getElementById('todo-container');
       var todoListNode = document.createElement('ul');
@@ -108,10 +110,9 @@ var todo = (function() {
 
     var typedTodo = {description: event.target.description.value};
 
-    state = todoFunctions.addTodo(state, typedTodo); // change this!! you should use todoFunctions.addTodo
+    state = todoFunctions.addTodo(state, typedTodo);
     controller.render(state);
   });
-
 
   controller.render(state);
 
