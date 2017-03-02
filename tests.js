@@ -84,10 +84,9 @@ QUnit.test( "another addToDo test", function( assert ) {
   var newTodo = {description: 'newdescription'};
   var newTodo2 = {description: 'newdescription'};
   todos = todo.todoFunctions.addTodo(todos, newTodo);
-  console.log(newTodo);
   todos = todo.todoFunctions.addTodo(todos, newTodo2);
-  console.log(todos);
-  assert.notEqual(todos[0].id, todos[1].id, "id's should be different");
+  assert.notEqual(todos[0].id, todos[1].id, "check generateId function increments ids correctly");
+
 });
 
 
