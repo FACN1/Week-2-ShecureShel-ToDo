@@ -1,3 +1,4 @@
+
 # Week Two ShecureShel
 
 ## [Todo App](https://facn1.github.io/Week-2-ShecureShel-ToDo/)
@@ -50,3 +51,4 @@ addTodo: function (todos, newTodo) {
   * Edgar and Hiba working on QUnit test in the morning and DOM manipulation in the afternoon.
   * Lawson and Suha researched part2.
   * as a group of 4 completed DOM manipulation.
+
