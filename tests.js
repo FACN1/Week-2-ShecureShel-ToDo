@@ -100,34 +100,21 @@ QUnit.test( "another addToDo test", function( assert ) {
 //   assert.deepEqual( todo.todoFunctions.addTodo(toDoArray, myNewToDo), toDoArray, "todo is unmutated" );
 // });
 
-var testArray = [
-{
-  id: 0,
-  description: "walk the dog",
-  done: false
-},
-{
-  id: 1,
-  description: "clean the house",
-  done: false
-},
-{
-  id: 2,
-  description: "clean the car",
-  done: false
-}
-];
-
-var testDelete = 1;
 
 
-var expectedArray = [
+
+QUnit.test( "deleteTodo test", function( assert ) {
+  var testArray = [
   {
     id: 0,
     description: "walk the dog",
     done: false
   },
-
+  {
+    id: 1,
+    description: "clean the house",
+    done: false
+  },
   {
     id: 2,
     description: "clean the car",
@@ -135,7 +122,21 @@ var expectedArray = [
   }
   ];
 
+  var testDelete = 1;
 
-QUnit.test( "deleteTodo test", function( assert ) {
+
+  var expectedArray = [
+    {
+      id: 0,
+      description: "walk the dog",
+      done: false
+    },
+
+    {
+      id: 2,
+      description: "clean the car",
+      done: false
+    }
+    ];
   assert.deepEqual( todo.todoFunctions.deleteTodo(testArray, testDelete), expectedArray, "object with toDelete id is deleted" );
 });
